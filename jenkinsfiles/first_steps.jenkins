@@ -4,7 +4,7 @@ properties([disableConcurrentBuilds()])
 
 pipeline {
     agent { 
-        label 'master'
+        label 'test_agent'
         }
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
@@ -13,12 +13,12 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                sh 'ssh root@test \'hostname\''
+                sh 'ssh jenkins@dev \'hostname\''
             }
         }
         stage("Second step") {
             steps {
-                sh 'ssh root@test \'uptime\''
+                sh 'ssh jenkins@dev \'uptime\''
             }
         }
     }
