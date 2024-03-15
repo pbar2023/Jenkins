@@ -13,12 +13,12 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                sh 'ssh jenkins@dev \'hostname\''
+                sh 'ssh openbravo@dev \'hostname\''
             }
         }
         stage("Second step") {
             steps {
-                sh 'ssh jenkins@dev \'uptime\''
+                sh 'ssh openbravo@dev \'uptime\''
             }
         }
     }
